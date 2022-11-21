@@ -43,6 +43,7 @@ function showAbout(){
 }
 
 function showAboutUser($parameters = null){
+  if (isset($parameters)) {
 ?>
   <!DOCTYPE html>
   <html>
@@ -54,13 +55,19 @@ function showAboutUser($parameters = null){
     <body>
         <h1>About any user</h1>
         <?php
+         if(is_string($parameters)){
           $name = $parameters;
+         }else                            //Must check better?
+         {$name = $parameters[0];}
           echo "<h1>Welcome $name</h1>"
         ?>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo tempora voluptatum pariatur debitis? Recusandae cumque voluptatibus magnam vero culpa eligendi illum! Dolorem quis earum amet excepturi temporibus minus voluptatum laudantium!</p>
     </body>
   </html>
 <?php
+}else{
+  showAbout();
+  }
 }
 ?>
 

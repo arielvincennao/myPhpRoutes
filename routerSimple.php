@@ -1,4 +1,7 @@
 <?php
+
+// ** This router only needs routerSimple.php and changing .htacess file to link it
+
 require_once ('libraries/Home.php');
 require_once ('libraries/About.php');
 require_once ('libraries/Login.php');
@@ -25,3 +28,5 @@ else{
         }
     }
 }
+
+?>
